@@ -1,0 +1,17 @@
+# see https://taskfile.dev for documentation and installation instructions
+version: "3.0"
+
+tasks:
+  install-devtools:
+    description: Installs the devtools needed to lint and format the code
+    cmds:
+      - go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.53.1
+      - go install mvdan.cc/gofumpt@latest
+  fmt:
+    description: Formats the code, as per the gofumpt standard
+    cmds:
+      - gofumpt -l -w .
+  lint:
+    description: Lint the code. Uses golangci-lint, with linters configured in .golanci.yml
+    cmds:
+      - golangci-lint run
