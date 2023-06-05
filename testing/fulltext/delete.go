@@ -13,7 +13,7 @@ func delete() {
 	cache.FTInit(-1, -1, 3)
 
 	// Test Delete()
-	var data = map[string]any{
+	data := map[string]any{
 		"name": "tristan",
 		"age":  17,
 	}

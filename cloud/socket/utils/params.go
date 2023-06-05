@@ -19,7 +19,7 @@ type Params struct {
 // Returns:
 //   - (*Params, error): A pointer to a Params struct and an error if the parsing fails, or nil if successful.
 func ParseParams(msg []byte) (*Params, error) {
-	var data = new(Params)
+	data := new(Params)
 	if err := json.Unmarshal(msg, &data.values); err != nil {
 		return nil, err
 	}

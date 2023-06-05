@@ -19,7 +19,7 @@ func main() {
 	}
 
 	// Get the arg data
-	var args, err = utils.GetArgData(os.Args)
+	args, err := utils.GetArgData(os.Args)
 	if err != nil || args.Port() == nil {
 		panic("incorrect usage. example: ./hermes serve -p {port}")
 	}

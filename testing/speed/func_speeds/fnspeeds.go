@@ -24,11 +24,11 @@ func main() {
 	}
 
 	// The data for the user_id and user_id2 key
-	var data = map[string]any{
+	data := map[string]any{
 		"name": cache.WithFT("tristan1"),
 		"age":  17,
 	}
-	var data2 = map[string]any{
+	data2 := map[string]any{
 		"name": map[string]any{
 			"$hermes.full_text": true,
 			"value":             "tristan2",
@@ -49,13 +49,13 @@ func main() {
 
 	// Get the user_id value
 	duration("Get", func() {
-		var user = cache.Get("user_id")
+		user := cache.Get("user_id")
 		fmt.Println(user)
 	})
 
 	// Search for a word in the cache
 	duration("Search", func() {
-		var result, _ = cache.SearchOneWord(hermes.SearchParams{
+		result, _ := cache.SearchOneWord(hermes.SearchParams{
 			Query:  "tristan",
 			Limit:  100,
 			Strict: false,
@@ -64,7 +64,7 @@ func main() {
 	})
 
 	// Print all the cache info
-	//cache.Info()
+	// cache.Info()
 
 	/* Reset the FT cache
 	if err := cache.ResetFT(maxWords, maxSizeBytes, schema); err != nil {
@@ -78,7 +78,7 @@ func main() {
 
 	// Search for a word in the cache
 	duration("Search", func() {
-		var result, _ = cache.SearchOneWord(hermes.SearchParams{
+		result, _ := cache.SearchOneWord(hermes.SearchParams{
 			Query:  "tristan",
 			Limit:  100,
 			Strict: false,
@@ -87,7 +87,7 @@ func main() {
 	})
 
 	// Print all the cache info
-	//cache.Info()
+	// cache.Info()
 }
 
 // Track the duration of a function

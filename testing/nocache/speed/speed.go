@@ -24,7 +24,7 @@ func BasicSearch() {
 	} else {
 		var average int64 = 0
 		for i := 0; i < 100; i++ {
-			var startTime = time.Now()
+			startTime := time.Now()
 			// Iterate over the data array
 			for _, val := range data {
 				// Iterate over the map
@@ -40,7 +40,7 @@ func BasicSearch() {
 
 					// Check if the value contains the search term
 					if strings.Contains(strings.ToLower(value), strings.ToLower("computer")) {
-						var _ = k
+						_ = k
 					}
 				}
 			}
@@ -55,7 +55,7 @@ func BasicSearch() {
 // hermes Search
 func hermesSearch() {
 	// Initialize the cache
-	var cache, err = hermes.InitWithJson("../../../data/data_array.json", 3)
+	cache, err := hermes.InitWithJson("../../../data/data_array.json", 3)
 	if err != nil {
 		panic(err)
 	}

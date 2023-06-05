@@ -61,7 +61,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	// Search for a word in the cache
 	// Make sure the show which keys you do want to search through,
 	// and which ones you don't
-	var res, _ = cache.Search(hermes.SearchParams{
+	res, _ := cache.Search(hermes.SearchParams{
 		Query:  query,
 		Limit:  limit,
 		Strict: strict,
@@ -71,6 +71,6 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("\nFound %v results in %v", len(res), time.Since(start))
 
 	// Write the courses to the json response
-	var response, _ = json.Marshal(res)
+	response, _ := json.Marshal(res)
 	w.Write(response)
 }

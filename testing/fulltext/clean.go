@@ -10,7 +10,7 @@ func clean() {
 	var cache *hermes.Cache = hermes.InitCache()
 
 	// Test CleanFT()
-	var data = map[string]any{
+	data := map[string]any{
 		"name": "tristan",
 		"age":  17,
 	}
@@ -24,7 +24,7 @@ func clean() {
 	cache.FTInit(-1, -1, 3)
 
 	// Search for a word in the cache
-	var result, _ = cache.SearchOneWord(hermes.SearchParams{
+	result, _ := cache.SearchOneWord(hermes.SearchParams{
 		Query:  "tristan",
 		Limit:  100,
 		Strict: false,

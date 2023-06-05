@@ -24,7 +24,7 @@ func BasicSearch() {
 	} else {
 		var average int64 = 0
 		for i := 0; i < 100; i++ {
-			var startTime = time.Now()
+			startTime := time.Now()
 			// print the data
 			for _, val := range data {
 				for k, v := range val {
@@ -38,7 +38,7 @@ func BasicSearch() {
 					var value string = data["$hermes.value"].(string)
 
 					if strings.Contains(strings.ToLower(value), strings.ToLower("computer")) {
-						var _ = k
+						_ = k
 					}
 				}
 			}

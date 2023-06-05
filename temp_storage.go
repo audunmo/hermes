@@ -27,7 +27,7 @@ type TempStorage struct {
 // Returns:
 //   - (*TempStorage): A pointer to the newly created TempStorage object.
 func NewTempStorage(ft *FullText) *TempStorage {
-	var ts = &TempStorage{
+	ts := &TempStorage{
 		data:    ft.storage,
 		indices: ft.indices,
 		index:   ft.index,

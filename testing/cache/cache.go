@@ -11,7 +11,7 @@ func main() {
 	cache.FTInit(3, -1, -1)
 
 	// Test Set, Get, Delete, Clean, Length, Values, Keys, and Exists
-	var data = map[string]any{
+	data := map[string]any{
 		"name": cache.WithFT("Tristan"),
 		"age":  17,
 	}
